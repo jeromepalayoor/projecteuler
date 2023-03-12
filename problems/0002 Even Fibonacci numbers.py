@@ -10,17 +10,19 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
 
 '''
 
-fib = 1
-fibprev = 0
-a = 0
+sum = 0
 
-while fib < 4000000:
-    new = fib + fibprev
-    if new % 2 == 0:
-        a += new
-    fibprev = fib
-    fib = new
-print(a)
+current_term = 1
+previous_term = 0
+
+while current_term < 4000000:
+    next_term = current_term + previous_term
+    if next_term % 2 == 0:
+        sum += next_term
+    previous_term = current_term
+    current_term = next_term
+
+print(sum)
 
 
 #answer : 4613732
